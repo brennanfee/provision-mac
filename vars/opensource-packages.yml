@@ -1,0 +1,22 @@
+---
+brew_packages_with_options:
+    - { pkg: pidgin, opts: "with-gsasl" }
+brew_packages:
+    - evince
+cask_packages:
+    - handbrake
+    - handbrakecli
+    - clementine
+    - gimp
+    - scribus
+    - libreoffice
+    - kodi
+    - blender
+    - darktable
+    - mypaint
+    - krita
+    - audacity
+    - musescore
+    - qbittorrent
+    - transmission
+    - transmission-remote-gui

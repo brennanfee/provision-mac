@@ -1,0 +1,9 @@
+---
+- name: node | Install Global Node Packages
+  npm:
+    name: "{{ item }}"
+    executable: /usr/local/bin/npm
+    global: yes
+    production: yes
+    state: present
+  with_items: "{{ node_packages }}"

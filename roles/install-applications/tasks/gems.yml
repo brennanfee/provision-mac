@@ -1,0 +1,6 @@
+---
+- name: gems | Install Gems
+  gem:
+    name: "{{ item }}"
+    state: present
+  with_items: "{{ gem_packages }}"

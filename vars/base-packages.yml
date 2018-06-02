@@ -1,0 +1,156 @@
+---
+brew_taps:
+    - homebrew/dupes
+    - homebrew/fuse
+    - caskroom/fonts
+    - caskroom/versions
+    - thoughtbot/formulae
+pre_cask_packages:
+    - java
+    - osxfuse-beta
+brew_packages_with_options:
+    - { pkg: gcc, opts: "with-all-languages,with-java,with-jit" }
+    - { pkg: sqlite, opts: "with-function,with-secure-delete" }
+    - { pkg: tcl-tk, opts: "with-threads" }
+    - { pkg: python, opts: "with-berkeley-db4,with-tcl-tk" }
+    - { pkg: python3, opts: "with-tcl-tk" }
+    - { pkg: ruby, opts: "with-doc" }
+    - { pkg: libxml2, opts: "with-python" }
+    - { pkg: curl, opts: "with-libidn,with-openssl,with-rtmpdump,with-nghttp2" }
+    - { pkg: grep, opts: "with-default-names" }
+    - { pkg: findutils, opts: "with-default-names" }
+    - { pkg: ed, opts: "with-default-names" }
+    - { pkg: gnu-sed, opts: "with-default-names" }
+    - { pkg: gnu-tar, opts: "with-default-names" }
+    - { pkg: gnu-which, opts: "with-default-names" }
+    - { pkg: gnu-indent, opts: "with-default-names" }
+    - { pkg: gnu-time, opts: "with-default-names" }
+    - { pkg: gnu-units, opts: "with-default-names" }
+    - { pkg: make, opts: "with-default-names" }
+    - { pkg: git, opts: "with-brewed-curl,with-brewed-openssl,with-gettext,with-pcre,with-persistent-https" }
+    - { pkg: librsvg, opts: "with-glib" }
+    - { pkg: ffmpeg, opts: "with-fdk-aac,with-faac,with-ffplay,with-freetype,with-libass,with-libbluray,with-libvorbis,with-libvpx,with-openssl,with-opus,with-rtmpdump,with-speex,with-theora,with-tools,with-webp,with-x265" }
+    - { pkg: imagemagick, opts: "with-fftw,with-hdri,with-jp2,with-librsvg,with-libwmf,with-webp" }
+    - { pkg: graphicsmagick, opts: "with-libwmf,with-webp" }
+    - { pkg: emacs, opts: "with-cocoa,with-ctags,with-gnutls,with-librsvg,with-mailutils" }
+    - { pkg: gdb, opts: "with-python,with-version-suffix" }
+    - { pkg: less, opts: "with-pcre" }
+    - { pkg: lua, opts: "with-completion" }
+    - { pkg: vim, opts: "with-override-system-vi,with-lua,with-luajit,with-mzscheme,with-python3,with-tcl" }
+    - { pkg: macvim, opts: "with-override-system-vim,with-lua,with-luajit,with-python3" }
+    - { pkg: node, opts: "with-openssl" }
+    - { pkg: wget, opts: "with-pcre" }
+    - { pkg: wdiff, opts: "with-gettext" }
+    - { pkg: gnupg2, opts: "with-readline" }
+    - { pkg: htop, opts: "with-ncurses" }
+    - { pkg: cmus, opts: "with-ffmpeg,with-opusfile" }
+    - { pkg: poppler, opts: "with-qt5" }
+    - { pkg: flac, opts: "with-libogg" }
+    - { pkg: sox, opts: "with-flac,with-lame,with-libao,with-libsndfile,with-libvorbis,with-opencore-amr,with-opusfile" }
+    - { pkg: vorbis-tools, opts: "with-flac" }
+brew_packages:
+    - rcm
+    - bash
+    - bash-completion
+    - zsh-completions
+    - antigen
+    - coreutils
+    - moreutils
+    - the_silver_searcher
+    - ncdu
+    - nmap
+    - tmux
+    - tree
+    - zsh
+    - lynx
+    - gifsicle
+    - markdown
+    - binutils
+    - diffutils
+    - gawk
+    - gzip
+    - watch
+    - gnu-getopt
+    - gnu-barcode
+    - gpatch
+    - nano
+    - rsync
+    - unzip
+    - cabextract
+    - w3m
+    - gnupg
+    - most
+    - jq
+    - p7zip
+    - atool
+    - cdrdao
+    - espeak
+    - highlight
+    - source-highlight
+    - minidlna
+    - netpbm
+    - opus-tools
+    - pinentry-mac
+    - ranger
+    - rush
+    - screenfetch
+    - speex
+    - sshfs
+    - vifm
+    - dos2unix
+    - dosfstools
+    - openvpn
+    - googler
+    - tty-clock
+    - syncthing # or bittorrent-sync, insync
+#    - ext4fuse  # not sold on fuse in mac yet
+cask_packages:
+    - dropbox
+    - firefox
+    - google-chrome
+    - visual-studio-code
+    - vlc
+    - evernote
+    - karabiner
+    - seil
+    - keepingyouawake
+    - kindle
+    - flux
+    - qlmarkdown
+    - aerial
+    - appcleaner
+    - commander-one
+    - amazon-music
+    - google-drive
+#    - skyfonts
+#    - owncloud
+#    - seafile-client
+# Core fonts
+    - font-passion-one
+    - font-cinzel-decorative
+#    - font-bangers  # 404 error right now
+    - font-bungee
+#    - font-pacifico  # 404 error right now
+#    - font-courgette  # 404 error right now
+    - font-hasklig
+    - font-fira-code
+    - font-fira-sans
+    - font-crimson-text
+    - font-merriweather
+    - font-merriweather-sans
+    - font-noto-emoji
+    - font-noto-sans
+    - font-noto-serif
+# Extra fonts
+    - font-anonymous-pro
+    - font-dejavu-sans
+    - font-droid-sans-mono
+    - font-droid-sans
+    - font-droid-serif
+    - font-source-code-pro
+    - font-source-sans-pro
+    - font-source-serif-pro
+    - font-ubuntu
+    - font-hack
+    - font-roboto
+    - font-cantarell

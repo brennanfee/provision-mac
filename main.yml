@@ -1,0 +1,61 @@
+---
+- name: Main Setup
+  hosts: all
+  roles:
+    - role: xcode-verify
+    - role: homebrew-install
+    - role: python-install
+    - role: setup-ssh
+    - role: ansible-install
+    - role: ruby-install
+    - role: ntp
+    - role: base-configuration
+
+- name: Base Applications
+  hosts: all
+  vars_files:
+    - vars/base-packages.yml
+  roles:
+    - role: install-applications
+
+- name: Licensed Applications
+  hosts: all
+  vars_files:
+    - vars/licensed-packages.yml
+  roles:
+    - role: install-applications
+
+- name: Open Source Applications
+  hosts: WithOpenSource
+  vars_files:
+    - vars/opensource-packages.yml
+  roles:
+    - role: install-applications
+
+- name: Development Applications
+  hosts: WithDevelopmentTools
+  vars_files:
+    - vars/dev-packages.yml
+  roles:
+    - role: install-applications
+
+- name: Games
+  hosts: WithGames
+  vars_files:
+    - vars/game-packages.yml
+  roles:
+    - role: install-applications
+
+- name: Virtualization Applications
+  hosts: WithVirtualization
+  vars_files:
+    - vars/virtualization-packages.yml
+  roles:
+    - role: install-applications
+
+- name: X11 Applications
+  hosts: WithX11Apps
+  vars_files:
+    - vars/x11-packages.yml
+  roles:
+    - role: install-applications

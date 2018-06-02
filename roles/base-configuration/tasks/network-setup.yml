@@ -1,0 +1,9 @@
+---
+- name: network-setup | Turn on Always Append Search Domains
+  become: true
+  osx_defaults:
+    domain: /Library/Preferences/com.apple.mDNSResponder
+    key: AlwaysAppendSearchDomains
+    type: bool
+    value: "true"
+    state: present

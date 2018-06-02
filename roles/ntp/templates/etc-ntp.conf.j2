@@ -1,0 +1,19 @@
+server 0.us.pool.ntp.org
+server 1.us.pool.ntp.org
+server 2.us.pool.ntp.org
+server 3.us.pool.ntp.org
+
+# {{ ansible_managed }}
+
+# NOTE: Server list is at top so Mac GUI can correctly read primary server name.
+
+driftfile /var/lib/ntp/ntp.drift
+
+statsdir /var/log/ntpstats/
+
+statistics loopstats peerstats clockstats
+filegen loopstats file loopstats type day enable
+filegen peerstats file peerstats type day enable
+filegen clockstats file clockstats type day enable
+
+# NOTE: Restrict entries not needed as Apple includes them in a separate file.

@@ -1,0 +1,22 @@
+---
+- name: Determine if ntp is turned on
+  become: true
+  command: systemsetup -getusingnetworktime
+  register: ntp_turned_on
+  changed_when: false
+
+- name: Turn on ntp
+  become: true
+  command: systemsetup -setusingnetworktime on
+  when: 'ntp_turned_on.stdout|default("") == "Network Time: Off"'
+
+- name: Copy ntp.conf
+  become: true
+  template:
+    src: etc-ntp.conf.j2
+    dest: /etc/ntp.conf
+    owner: root
+    group: wheel
+    mode: 0644
+    backup: yes
+  notify: Update Time

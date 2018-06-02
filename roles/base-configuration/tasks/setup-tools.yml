@@ -1,0 +1,7 @@
+---
+- name: setup-tools | Install tools needed for setup
+  homebrew:
+    name: "{{ item }}"
+    state: present
+  with_items:
+    - dark-mode

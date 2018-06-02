@@ -1,0 +1,14 @@
+---
+- name: pip | Install Pip Packages for Python 2
+  pip:
+    name: "{{ item }}"
+    executable: /usr/local/bin/pip
+    state: present
+  with_items: "{{ pip2_packages }}"
+
+- name: pip | Install Pip Packages for Python 3
+  pip:
+    name: "{{ item }}"
+    executable: /usr/local/bin/pip3
+    state: present
+  with_items: "{{ pip3_packages }}"

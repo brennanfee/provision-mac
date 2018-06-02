@@ -1,0 +1,11 @@
+---
+- name: System Setup | Setup Global Defaults
+  become: true
+  command: systemsetup {{ item }}
+  with_items:
+    - '-settimezone "America/Los_Angeles"'
+    - '-setcomputersleep "Never"'
+    - '-setdisplaysleep "30"'
+    - '-setharddisksleep "Never"'
+    - '-setrestartfreeze "On"'
+  changed_when: False

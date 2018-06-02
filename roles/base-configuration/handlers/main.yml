@@ -1,0 +1,19 @@
+---
+- name: Update Time
+  become: true
+  shell: sntp 0.us.pool.ntp.org
+
+- name: killall Finder
+  command: killall Finder
+  register: finder_result
+  failed_when: finder_result.rc != 0 and not (finder_result.rc == 1 and finder_result.stderr == "No matching processes belonging to you were found")
+
+- name: killall SystemUIServer
+  command: killall SystemUIServer
+  register: uiserver_result
+  failed_when: uiserver_result.rc != 0 and not (uiserver_result.rc == 1 and uiserver_result.stderr == "No matching processes belonging to you were found")
+
+- name: killall Dock
+  command: killall Dock
+  register: dock_result
+  failed_when: dock_result.rc != 0 and not (dock_result.rc == 1 and dock_result.stderr == "No matching processes belonging to you were found")

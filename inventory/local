@@ -1,0 +1,21 @@
+# Inventory: Local
+localhost ansible_connection=local
+
+[desktops]
+localhost
+
+[laptops]
+
+[WithOpenSource]
+localhost
+
+[WithDevelopmentTools]
+localhost
+
+[WithGames]
+
+[WithVirtualization]
+localhost
+
+[WithX11Apps]
+localhost

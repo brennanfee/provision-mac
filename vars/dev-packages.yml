@@ -1,0 +1,46 @@
+---
+brew_taps:
+    - homebrew/php
+pre_brew_packages:
+    - perl
+    - ivy
+brew_packages_with_options:
+    - { pkg: php70, opts: "with-mssql,with-pear,with-postgresql,with-thread-safety" }
+    - { pkg: svn, opts: "with-gpg-agent,with-java,with-perl,with-python,with-ruby" }
+    - { pkg: ant, opts: "with-ivy" }
+brew_packages:
+    - autoconf
+    - automake
+    - cmake
+    - ctags
+    - flex
+    - packer
+    - terraform
+    - otto
+    - vault
+    - sloccount
+    - cloc
+    - go
+    - git-cola
+    - git-extras
+    - patchutils
+    - aws-keychain
+    - awscli
+    - phantomjs
+cask_packages:
+    - vagrant
+    - hipchat
+    - slack
+    - jetbrains-toolbox
+# Core icon fonts
+    - font-devicons
+    - font-fontawesome
+    - font-material-icons
+    - font-materialdesignicons-webfont
+# Extra icon fonts
+    - font-octicons
+#node_packages:
+#    - grunt-cli
+#    - gulp
+#    - typescript
+#    - phantomjs

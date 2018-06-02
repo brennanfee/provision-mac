@@ -1,0 +1,29 @@
+# Inventory: Home (Mac)
+
+[desktops]
+newton ansible_user=brennan
+
+[laptops]
+socrates ansible_user=brennan
+
+[virtual]
+
+[WithOpenSource]
+newton
+socrates
+
+[WithDevelopmentTools]
+newton
+socrates
+
+[WithGames]
+newton
+socrates
+
+[WithVirtualization]
+newton
+socrates
+
+[WithX11Apps]
+newton
+socrates

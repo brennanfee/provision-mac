@@ -1,0 +1,9 @@
+---
+brew_taps:
+    - homebrew/games
+brew_packages:
+    - gnu-chess
+    - gnu-go
+cask_packages:
+    - steam
+    - battle-net

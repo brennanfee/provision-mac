@@ -1,0 +1,23 @@
+---
+- name: Install brewed Tcl/Tk
+  homebrew:
+    name: "tcl-tk"
+    install_options: "with-threads"
+    state: present
+
+- name: Install brewed Ruby
+  homebrew:
+    name: "ruby"
+    state: present
+
+- name: Update Gem Itself
+  become: true
+  command: /usr/local/bin/gem update --system
+  register: gem_result
+  changed_when: '"Latest version currently installed." not in gem_result.stdout|default("")'
+
+- name: Update Installed Gems
+  become: true
+  command: /usr/local/bin/gem update
+  register: gem_update
+  changed_when: '"Nothing to update" not in gem_update.stdout|default("")'

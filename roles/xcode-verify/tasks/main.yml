@@ -1,0 +1,22 @@
+---
+- name: Test For XCode
+  command: /usr/bin/xcode-select -p
+  register: xcode_result
+  changed_when: false
+  failed_when: false
+  ignore_errors: yes
+
+- name: Error On Invalid XCode Result
+  fail:
+    msg: "XCode returned an unknown result {{ xcode_result.rc }}"
+  when: xcode_result.rc != 0 and xcode_result.rc != 2
+
+- name: Error On XCode Not Present
+  fail:
+    msg: "Full XCode must be manually installed.  Use the Apple Store to install XCode.  Then run 'sudo xcodebuild -license' and 'xcode-select --install'."
+  when: xcode_result.rc == 2
+
+- name: Error On Command-Line Only Installed
+  fail:
+    msg: "Full XCode must be manually installed, currently only the command-line tools are installed.  Use the Apple Store to install XCode.  Then run 'sudo xcodebuild -license' and 'xcode-select --install'."
+  when: xcode_result.stdout == "/Library/Developer/CommandLineTools"

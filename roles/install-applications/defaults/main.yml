@@ -1,0 +1,16 @@
+---
+# Homebrew
+brew_taps: []
+pre_brew_packages: []
+pre_cask_packages: []
+brew_packages_with_options: []
+brew_packages: []
+cask_packages: []
+brew_liked_applications: []
+# Pip
+pip2_packages: []
+pip3_packages: []
+# Gems
+gem_packages: []
+# Node (npm)
+node_packages: []

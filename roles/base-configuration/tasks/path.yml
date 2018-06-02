@@ -1,0 +1,10 @@
+---
+- name: path | Set Global Path
+  become: true
+  template:
+    src: etc-paths.j2
+    dest: /etc/paths
+    owner: root
+    group: wheel
+    mode: 0644
+    backup: yes

@@ -1,0 +1,46 @@
+---
+- name: homebrew | Tap The Repositories
+  homebrew_tap:
+    tap: "{{ item }}"
+  with_items: "{{ brew_taps }}"
+  register: taps
+
+- name: homebrew | Update Homebrew
+  homebrew:
+    update_homebrew: yes
+  when: taps|changed
+
+- name: homebrew | Install Initial Homebrew Packages
+  homebrew:
+    name: "{{ item }}"
+    state: present
+  with_items: "{{ pre_brew_packages }}"
+
+- name: homebrew | Install Initial Cask Packages
+  homebrew_cask:
+    name: "{{ item }}"
+    state: present
+  environment:
+    HOMEBREW_CASK_OPTS: "--appdir=/Applications --fontdir=/Library/Fonts"
+  with_items: "{{ pre_cask_packages }}"
+
+- name: homebrew | Install Homebrew Packages With Options
+  homebrew:
+    name: "{{ item.pkg }}"
+    install_options: "{{ item.opts }}"
+    state: "{{ item.state|default('present') }}"
+  with_items: "{{ brew_packages_with_options }}"
+
+- name: homebrew | Install Homebrew Packages With Default Options
+  homebrew:
+    name: "{{ item }}"
+    state: present
+  with_items: "{{ brew_packages }}"
+
+- name: homebrew | Install Cask Applications
+  homebrew_cask:
+    name: "{{ item }}"
+    state: present
+  environment:
+    HOMEBREW_CASK_OPTS: "--appdir=/Applications --fontdir=/Library/Fonts"
+  with_items: "{{ cask_packages }}"

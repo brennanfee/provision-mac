@@ -1,0 +1,4 @@
+---
+- name: Update Time
+  become: true
+  shell: sntp 0.us.pool.ntp.org

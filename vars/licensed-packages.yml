@@ -1,0 +1,46 @@
+---
+# NOTE: While brew and cask can install a large number of applications there are still
+#       some that need to be installed manually.  I generally install the following apps
+#       from the App store:
+#           XCode (required before any of the ansible scripts are run)
+#           ScreenFlow (even though there is a Cask for this the license is tied to the Apple Store)
+#           Todoist (no brew or cask available)
+#           Aperature (no cask)
+#           Final Cut Pro (no cask)
+#           GarageBand (no cask)
+#           Logic Pro X (no cask)
+#           Motion (no cask)
+#           Compressor (no cask)
+#           Pages (no cask)
+#           Numbers (no cask)
+#           Keynote (no cask)
+#           Forecast Bar (no cask)
+#           PopClip (no cask)
+#           Twitter (no cask)
+#           Microsoft Remote Desktop (no cask)
+#           Shazam (no cask)
+#           Pushbullet (no cask)
+#           Disk Care (no cask)
+#           iPhoto (no cask - not always needed)
+#           iMovie (no cask - not always needed - use Final Cut Pro instead)
+#
+#####
+brew_packages:
+    - lastpass-cli
+cask_packages:
+    - iterm2
+    - alfred
+    - lastpass
+    - moom
+    - hyperdock
+    - beyond-compare
+    - bartender
+    - spotify
+    - dash
+    - private-internet-access
+    - logitech-harmony
+    - paragon-ntfs
+#    - marked   # currently, a checksum error
+#    - sublime-text  # switched to visual studio code
+#    - mountain
+#    - fantastical

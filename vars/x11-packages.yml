@@ -1,0 +1,13 @@
+---
+brew_taps:
+    - homebrew/x11
+    - homebrew/gui
+pre_cask_packages:
+    - xquartz
+brew_packages:
+    - feh
+    - freerdp
+    - rxvt-unicode
+cask_packages:
+    - inkscape
+    - dia

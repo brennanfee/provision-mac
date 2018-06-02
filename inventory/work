@@ -1,0 +1,22 @@
+# Inventory: Work (Mac)
+
+[desktops]
+
+[laptops]
+belc02pg6ceg3qc ansible_user=bfee
+
+[virtual]
+
+[WithOpenSource]
+belc02pg6ceg3qc
+
+[WithDevelopmentTools]
+belc02pg6ceg3qc
+
+[WithGames]
+
+[WithVirtualization]
+belc02pg6ceg3qc
+
+[WithX11Apps]
+belc02pg6ceg3qc

@@ -1,0 +1,8 @@
+---
+- name: Mac Bootstrap
+  hosts: all
+  roles:
+    - role: xcode-verify
+    - role: homebrew-install
+    - role: python-install
+    - role: setup-ssh

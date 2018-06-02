@@ -1,0 +1,6 @@
+- name: Restart Ssh
+  become: true
+  shell: "{{ item }}"
+  with_items:
+    - launchctl stop com.openssh.sshd
+    - launchctl start com.openssh.sshd

@@ -1,0 +1,8 @@
+---
+- include: homebrew.yml
+
+- include: pip.yml
+
+- include: gems.yml
+
+- include: node.yml

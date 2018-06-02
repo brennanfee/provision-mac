@@ -1,0 +1,12 @@
+---
+- include: setup-tools.yml
+
+- include: network-setup.yml
+
+- include: system-setup.yml
+
+- include: path.yml
+
+- include: shells.yml
+
+- include: system-defaults.yml

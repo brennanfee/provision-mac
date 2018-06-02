@@ -1,0 +1,56 @@
+---
+- name: Tap the dupes repository
+  homebrew_tap:
+    tap: "homebrew/dupes"
+  register: taps
+
+- name: Update Homebrew
+  homebrew:
+    update_homebrew: yes
+  when: taps|changed
+
+- name: Install brewed Sqlite
+  homebrew:
+    name: "sqlite"
+    install_options: "with-function,with-secure-delete"
+    state: present
+
+- name: Install brewed Tcl/Tk
+  homebrew:
+    name: "tcl-tk"
+    install_options: "with-threads"
+    state: present
+
+- name: Install brewed Python
+  homebrew:
+    name: "python"
+    install_options: "with-berkeley-db4,with-tcl-tk"
+    state: present
+
+- name: Install brewed Python3
+  homebrew:
+    name: "python3"
+    install_options: "with-tcl-tk"
+    state: present
+
+- name: Update Pip2 Packages
+  pip:
+    name: "{{ item }}"
+    executable: /usr/local/bin/pip2
+    state: latest
+  with_items:
+    - pip
+    - setuptools
+    - wheel
+    - virtualenv
+
+- name: Update Pip3 Packages
+  pip:
+    name: "{{ item }}"
+    executable: /usr/local/bin/pip3
+    state: latest
+  with_items:
+    - pip
+    - setuptools
+    - wheel
+    - virtualenv

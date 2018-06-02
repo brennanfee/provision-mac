@@ -1,0 +1,10 @@
+---
+- name: Install Ansible
+  pip:
+    name: "{{ item }}"
+    executable: /usr/local/bin/pip2
+    state: present
+  with_items:
+    - ansible
+    - kerberos
+    - pywinrm

@@ -1,0 +1,10 @@
+---
+- name: shells| Set Allowed Shells
+  become: true
+  template:
+    src: etc-shells.j2
+    dest: /etc/shells
+    owner: root
+    group: wheel
+    mode: 0644
+    backup: yes

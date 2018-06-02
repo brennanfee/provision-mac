@@ -1,0 +1,6 @@
+---
+cask_packages:
+    - virtualbox
+    - virtualbox-extension-pack
+#    - parallels-desktop
+#    - parallels-virtualization-sdk

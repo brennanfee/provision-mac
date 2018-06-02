@@ -1,0 +1,17 @@
+{
+    "name": "provision-mac",
+    "version": "0.0.1",
+    "description": "Scripts to provision my macOS environments",
+    "repository": "github:brennanfee/provision-mac",
+    "homepage": "https://github.com/brennanfee/provision-mac#readme",
+    "bugs": "https://github.com/brennanfee/provision-mac/issues",
+    "author": "Brennan Fee <github@todaytechsoft.biz> (https://github.com/brennanfee)",
+    "keywords": [],
+    "devDependencies": {},
+    "dependencies": {},
+    "private": true,
+    "license": "MIT",
+    "scripts": {
+        "test": "echo 'Error: no tests specified' && exit 1"
+    }
+}
